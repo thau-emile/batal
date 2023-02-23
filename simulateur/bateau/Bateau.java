@@ -30,20 +30,37 @@ public class Bateau {
     }
 
     public boolean prendLaMer() {
+        System.out.println(this.nom + " prend la mer.");
         return true;
     }
 
     public void navigue(double miles) {
         this.milesParcourus += miles;
+        System.out.printf(this.nom +
+                " parcourt %.2f miles.\n",
+                this.milesParcourus);
     }
 
     public void arriveAuPort() {
-        System.out.printf("%.2f\n", this.milesParcourus);
+        System.out.printf(this.nom +
+                " a parcouru %.2f miles lors de sa sortie en mer.\n",
+                this.milesParcourus);
         this.milesParcourus = 0;
     }
 
+    public Bateau() {
+        Bateau.nombreDeBateauxConstruits++;
+    }
+
+    public Bateau(String nom) {
+        this.nom = nom;
+        Bateau.nombreDeBateauxConstruits++;
+    }
+
     public static void main(String[] args) {
-        Bateau ohMonBateau = new Bateau();
+
+        System.out.println(Bateau.nombreDeBateauxConstruits);
+        Bateau ohMonBateau = new Bateau("Titanic ça va bien se passer");
         ohMonBateau.prendLaMer();
         ohMonBateau.navigue(30);
         ohMonBateau.navigue(12);
@@ -53,6 +70,7 @@ public class Bateau {
         ohMonBateau.navigue(7.8);
         ohMonBateau.navigue(1.9);
         ohMonBateau.arriveAuPort();
+        System.out.println(Bateau.nombreDeBateauxConstruits);
     }
 
 }

@@ -1,4 +1,4 @@
-package exercices.exo_bateau.simulateur.bateau.piece;
+package simulateur.bateau.piece;
 
 public class Moteur {
     final int puissance;

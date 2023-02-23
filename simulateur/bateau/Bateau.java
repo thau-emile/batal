@@ -1,4 +1,4 @@
-package exercices.exo_bateau.simulateur.bateau;
+package simulateur.bateau;
 
 import exercices.exo_bateau.simulateur.bateau.piece.Coque;
 

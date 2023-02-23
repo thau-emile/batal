@@ -1,7 +1,7 @@
-package exercices.exo_bateau.simulateur;
+package simulateur;
 
-import exercices.exo_bateau.simulateur.bateau.Bateau;
-import exercices.exo_bateau.simulateur.bateau.piece.Coque;
+import simulateur.bateau.Bateau;
+import simulateur.bateau.piece.Coque;
 
 public class Simulateur {
         public static void main(String[] args) {

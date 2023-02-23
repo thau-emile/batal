@@ -4,15 +4,23 @@ public class Bateau {
     private final String nom;
     private double milesParcourus = 0;
     private static int nombreDeBateauxConstruits = 0;
+    private Coque coque;
     private final int countDown = 42;
 
-    public Bateau() {
-        this.nom = "Un nom bateau.";
+    // public Bateau() {
+    // this.nom = "Un nom bateau.";
+    // Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() +
+    // 1);
+    // }
+
+    public Bateau(String nom) {
+        this.nom = nom;
         Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
     }
 
-    public Bateau(String nouveauNom) {
-        this.nom = nouveauNom;
+    public Bateau(String nom, int ptDeVieMaxCoque) {
+        this.nom = nom;
+        this.setCoque(new Coque(ptDeVieMaxCoque));
         Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
     }
 
@@ -34,6 +42,14 @@ public class Bateau {
 
     public static void setNombreDeBateauxConstruits(int nombreDeBateauxConstruits) {
         Bateau.nombreDeBateauxConstruits = nombreDeBateauxConstruits;
+    }
+
+    public Coque getCoque() {
+        return this.coque;
+    }
+
+    public void setCoque(Coque coque) {
+        this.coque = coque;
     }
 
     public boolean prendLaMer() {

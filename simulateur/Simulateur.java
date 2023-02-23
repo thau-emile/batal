@@ -1,5 +1,6 @@
-package exercices.exo_bateau.simulateur.bateau;
+package exercices.exo_bateau.simulateur;
 
+import exercices.exo_bateau.simulateur.bateau.Bateau;
 import exercices.exo_bateau.simulateur.bateau.piece.Coque;
 
 public class Simulateur {

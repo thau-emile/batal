@@ -2,6 +2,7 @@ package simulateur;
 
 import simulateur.bateau.Bateau;
 import simulateur.bateau.piece.Coque;
+import simulateur.bateau.piece.Moteur;
 
 public class Simulateur {
         public static void main(String[] args) {
@@ -37,5 +38,7 @@ public class Simulateur {
                 System.out.println(Bateau.getNombreDeBateauxConstruits()
                                 + " bateaux ont été construits");
 
+                Moteur monMoteur = new Moteur(200, 8);
+                ohMonBateau.setMoteur(monMoteur);
         }
 }

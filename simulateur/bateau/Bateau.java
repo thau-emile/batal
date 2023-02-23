@@ -1,6 +1,7 @@
 package simulateur.bateau;
 
 import simulateur.bateau.piece.Coque;
+import simulateur.bateau.piece.Moteur;
 
 /**
  * Bateau simule un... bateau.
@@ -10,6 +11,7 @@ public class Bateau {
     private double milesParcourus = 0;
     private static int nombreDeBateauxConstruits = 0;
     private Coque coque;
+    private Moteur moteur;
     // private final int countDown = 42;
 
     /**
@@ -91,6 +93,14 @@ public class Bateau {
                 " a parcouru %.2f miles lors de sa sortie en mer.\n",
                 this.getMilesParcourus());
         this.setMilesParcourus(0);
+    }
+
+    public Moteur getMoteur() {
+        return moteur;
+    }
+
+    public void setMoteur(Moteur moteur) {
+        this.moteur = moteur;
     }
 
 }

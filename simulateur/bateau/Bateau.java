@@ -1,6 +1,6 @@
 package simulateur.bateau;
 
-import exercices.exo_bateau.simulateur.bateau.piece.Coque;
+import simulateur.bateau.piece.Coque;
 
 /**
  * Bateau simule un... bateau.

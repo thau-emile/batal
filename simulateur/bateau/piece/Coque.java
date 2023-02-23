@@ -1,4 +1,4 @@
-package exercices.exo_bateau.simulateur.bateau;
+package exercices.exo_bateau.simulateur.bateau.piece;
 
 /**
  * Coque simule la coque d'un bateau.

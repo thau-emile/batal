@@ -1,16 +1,23 @@
 package exercices.exo_bateau.simulateur.bateau;
 
 public class Bateau {
-    private String nom;
+    private final String nom;
     private double milesParcourus = 0;
     private static int nombreDeBateauxConstruits = 0;
+    private final int countDown = 42;
+
+    public Bateau() {
+        this.nom = "Un nom bateau.";
+        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
+    }
+
+    public Bateau(String nouveauNom) {
+        this.nom = nouveauNom;
+        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
+    }
 
     public String getNom() {
         return this.nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
     }
 
     public double getMilesParcourus() {
@@ -46,16 +53,6 @@ public class Bateau {
                 " a parcouru %.2f miles lors de sa sortie en mer.\n",
                 this.getMilesParcourus());
         this.setMilesParcourus(0);
-    }
-
-    public Bateau() {
-        this.setNom("Un nom bateau.");
-        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
-    }
-
-    public Bateau(String nom) {
-        this.setNom(nom);
-        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
     }
 
 }

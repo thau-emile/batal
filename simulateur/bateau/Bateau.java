@@ -1,5 +1,8 @@
 package exercices.exo_bateau.simulateur.bateau;
 
+/**
+ * Bateau simule un... bateau.
+ */
 public class Bateau {
     private final String nom;
     private double milesParcourus = 0;
@@ -7,17 +10,23 @@ public class Bateau {
     private Coque coque;
     private final int countDown = 42;
 
-    // public Bateau() {
-    // this.nom = "Un nom bateau.";
-    // Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() +
-    // 1);
-    // }
-
+    /**
+     * Construit un Bateau sans Coque.
+     *
+     * @param nom : son nom définitif
+     */
     public Bateau(String nom) {
         this.nom = nom;
         Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
     }
 
+    /**
+     * Construit un bateau avec une coque
+     *
+     * @param nom             : son nom définitif
+     * @param ptDeVieMaxCoque : initialise ptDeVie et ptDeVieMax de la coque du
+     *                        bateau créé
+     */
     public Bateau(String nom, int ptDeVieMaxCoque) {
         this.nom = nom;
         this.setCoque(new Coque(ptDeVieMaxCoque));
@@ -52,11 +61,18 @@ public class Bateau {
         this.coque = coque;
     }
 
-    public boolean prendLaMer() {
+    /**
+     * Le navire prends la mer.
+     */
+    public void prendLaMer() {
         System.out.println(this.getNom() + " prend la mer.");
-        return true;
     }
 
+    /**
+     * Fait naviguer le bateau
+     *
+     * @param miles : combien de miles parcourus par cette navigation
+     */
     public void navigue(double miles) {
         this.setMilesParcourus(this.getMilesParcourus() + miles);
         System.out.printf(this.getNom() +
@@ -64,6 +80,10 @@ public class Bateau {
                 this.getMilesParcourus());
     }
 
+    /**
+     * Simule l'arrivée du bateau au port.
+     * Affiche les miles parcourus depuis le départ, uis les reset.
+     */
     public void arriveAuPort() {
         System.out.printf(this.getNom() +
                 " a parcouru %.2f miles lors de sa sortie en mer.\n",

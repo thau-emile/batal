@@ -5,16 +5,16 @@ package exercices.exo_bateau.simulateur.bateau;
  */
 public class Coque {
     private int ptDeVie;
-    private int ptDeVieMax = 42;
+    private int ptDeVieMax;
 
     /**
-     * Constructeur de Coque.
+     * Constructeur de Coque. Genre Naval Group.
      *
      * @param initPtDeVieMax initialise ptDeVie et ptDeVieMax
      */
     public Coque(int initPtDeVieMax) {
-        this.setPtDeVie(initPtDeVieMax);
-        this.setPtDeVieMax(initPtDeVieMax);
+        this.ptDeVie = initPtDeVieMax;
+        this.ptDeVieMax = initPtDeVieMax;
     }
 
     public int getPtDeVie() {

@@ -8,7 +8,7 @@ public class Bateau {
     private double milesParcourus = 0;
     private static int nombreDeBateauxConstruits = 0;
     private Coque coque;
-    private final int countDown = 42;
+    // private final int countDown = 42;
 
     /**
      * Construit un Bateau sans Coque.
@@ -17,7 +17,7 @@ public class Bateau {
      */
     public Bateau(String nom) {
         this.nom = nom;
-        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
+        Bateau.nombreDeBateauxConstruits++;
     }
 
     /**
@@ -30,7 +30,7 @@ public class Bateau {
     public Bateau(String nom, int ptDeVieMaxCoque) {
         this.nom = nom;
         this.setCoque(new Coque(ptDeVieMaxCoque));
-        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
+        Bateau.nombreDeBateauxConstruits++;
     }
 
     public String getNom() {

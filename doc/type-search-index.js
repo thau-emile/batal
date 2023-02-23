@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"exercices.exo_bateau.simulateur.bateau","l":"Bateau"},{"p":"exercices.exo_bateau.simulateur.bateau","l":"Coque"},{"p":"exercices.exo_bateau.simulateur.bateau","l":"Simulateur"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"exercices.exo_bateau.simulateur.bateau","l":"Bateau"},{"p":"exercices.exo_bateau.simulateur.bateau.piece","l":"Coque"},{"p":"exercices.exo_bateau.simulateur.bateau.piece","l":"Moteur"},{"p":"exercices.exo_bateau.simulateur","l":"Simulateur"}]

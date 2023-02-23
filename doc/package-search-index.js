@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"exercices.exo_bateau.simulateur.bateau"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"exercices.exo_bateau.simulateur"},{"l":"exercices.exo_bateau.simulateur.bateau"},{"l":"exercices.exo_bateau.simulateur.bateau.piece"}]

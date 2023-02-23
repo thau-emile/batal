@@ -30,36 +30,37 @@ public class Bateau {
     }
 
     public boolean prendLaMer() {
-        System.out.println(this.nom + " prend la mer.");
+        System.out.println(this.getNom() + " prend la mer.");
         return true;
     }
 
     public void navigue(double miles) {
-        this.milesParcourus += miles;
-        System.out.printf(this.nom +
+        this.setMilesParcourus(this.getMilesParcourus() + miles);
+        System.out.printf(this.getNom() +
                 " parcourt %.2f miles.\n",
-                this.milesParcourus);
+                this.getMilesParcourus());
     }
 
     public void arriveAuPort() {
-        System.out.printf(this.nom +
+        System.out.printf(this.getNom() +
                 " a parcouru %.2f miles lors de sa sortie en mer.\n",
-                this.milesParcourus);
-        this.milesParcourus = 0;
+                this.getMilesParcourus());
+        this.setMilesParcourus(0);
     }
 
     public Bateau() {
-        Bateau.nombreDeBateauxConstruits++;
+        this.setNom("Un nom bateau.");
+        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
     }
 
     public Bateau(String nom) {
-        this.nom = nom;
-        Bateau.nombreDeBateauxConstruits++;
+        this.setNom(nom);
+        Bateau.setNombreDeBateauxConstruits(Bateau.getNombreDeBateauxConstruits() + 1);
     }
 
     public static void main(String[] args) {
 
-        System.out.println(Bateau.nombreDeBateauxConstruits);
+        System.out.println(Bateau.getNombreDeBateauxConstruits());
         Bateau ohMonBateau = new Bateau("Titanic ça va bien se passer");
         ohMonBateau.prendLaMer();
         ohMonBateau.navigue(30);
@@ -70,7 +71,7 @@ public class Bateau {
         ohMonBateau.navigue(7.8);
         ohMonBateau.navigue(1.9);
         ohMonBateau.arriveAuPort();
-        System.out.println(Bateau.nombreDeBateauxConstruits);
+        System.out.println(Bateau.getNombreDeBateauxConstruits());
     }
 
 }

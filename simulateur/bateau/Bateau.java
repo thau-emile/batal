@@ -29,7 +29,7 @@ public class Bateau {
      */
     public Bateau(String nom, int ptDeVieMaxCoque) {
         this.nom = nom;
-        this.setCoque(new Coque(ptDeVieMaxCoque));
+        this.coque = new Coque(ptDeVieMaxCoque);
         Bateau.nombreDeBateauxConstruits++;
     }
 

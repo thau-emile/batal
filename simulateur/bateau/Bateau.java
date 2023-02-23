@@ -13,6 +13,22 @@ public class Bateau {
         this.nom = nom;
     }
 
+    public double getMilesParcourus() {
+        return this.milesParcourus;
+    }
+
+    public void setMilesParcourus(double milesParcourus) {
+        this.milesParcourus = milesParcourus;
+    }
+
+    public static int getNombreDeBateauxConstruits() {
+        return Bateau.nombreDeBateauxConstruits;
+    }
+
+    public static void setNombreDeBateauxConstruits(int nombreDeBateauxConstruits) {
+        Bateau.nombreDeBateauxConstruits = nombreDeBateauxConstruits;
+    }
+
     public boolean prendLaMer() {
         return true;
     }

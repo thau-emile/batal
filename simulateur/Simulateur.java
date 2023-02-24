@@ -1,6 +1,7 @@
 package simulateur;
 
 import simulateur.bateau.Bateau;
+import simulateur.bateau.BateauCivil;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
 
@@ -40,5 +41,13 @@ public class Simulateur {
 
                 Moteur monMoteur = new Moteur(200, 8);
                 ohMonBateau.setMoteur(monMoteur);
+
+                BateauCivil monBateauCivil = new BateauCivil("Belem", 25);
+                monBateauCivil.prendLaMer();
+                monBateauCivil.navigue(12);
+                monBateauCivil.arriveAuPort();
+                monBateauCivil.prendLaMer(27);
+                monBateauCivil.navigue(42);
+                monBateauCivil.arriveAuPort();
         }
 }

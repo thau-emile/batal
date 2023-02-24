@@ -1,19 +1,19 @@
 package simulateur.bateau.piece;
 
 public class Moteur {
-    final int puissance;
-    final int consommation;
+    final Integer puissance;
+    final Integer consommation;
 
-    public Moteur(int puissance, int consommation) {
+    public Moteur(Integer puissance, Integer consommation) {
         this.puissance = puissance;
         this.consommation = consommation;
     }
 
-    public int getPuissance() {
+    public Integer getPuissance() {
         return puissance;
     }
 
-    public int getConsommation() {
+    public Integer getConsommation() {
         return consommation;
     }
 

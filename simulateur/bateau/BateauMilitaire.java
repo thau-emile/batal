@@ -2,9 +2,15 @@ package simulateur.bateau;
 
 import simulateur.bateau.piece.Coque;
 
+/**
+ * BateauMilitaire simule un Bateau avec un canon.
+ */
 public class BateauMilitaire extends Bateau {
 
-    private int forceCanon; // 0 par défaut
+    /**
+     * Force du canon. 0 par défaut.
+     */
+    private int forceCanon;
 
     public BateauMilitaire(String nom) {
         super(nom);
@@ -48,6 +54,13 @@ public class BateauMilitaire extends Bateau {
                 + this.getForceCanon());
     }
 
+    /**
+     * Attaque un autre bateau.
+     * Lui retire un nombre de points de vie égal à la force du canon de
+     * l'attaquant.
+     *
+     * @param cible : bateau ciblé par l'attaque.
+     */
     public void attaque(Bateau cible) {
         System.out.println(this.getNom() + " attaque " + cible.getNom());
         Coque coqueCible = cible.getCoque();
@@ -57,7 +70,7 @@ public class BateauMilitaire extends Bateau {
             System.out.println("Il reste " + newPtDeVie + " points de vie à " + cible.getNom() + ".");
         } else {
             coqueCible.setPtDeVie(0);
-            System.out.println(cible.getNom() + "coule.");
+            System.out.println(cible.getNom() + " coule.");
         }
     }
 

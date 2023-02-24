@@ -1,5 +1,9 @@
 package simulateur.bateau;
 
+/**
+ * BateauCivil simule un Bateau qui peut embarquer des passagers, naviguer, puis
+ * les débarquer.
+ */
 public class BateauCivil extends Bateau {
 
     private int nbCivils;
@@ -20,6 +24,10 @@ public class BateauCivil extends Bateau {
         super(nom, ptDeVieMaxCoque);
     }
 
+    /**
+     * Le navire arrive au port et débarque tout ses passagers.
+     * Redéfini arriveAuPort de la classe mère Bateau
+     */
     @Override
     public void arriveAuPort() {
         super.arriveAuPort();
@@ -27,12 +35,21 @@ public class BateauCivil extends Bateau {
         this.setNbCivils(0);
     }
 
+    /**
+     * Fait naviguer le bateau civil avec des passagers
+     *
+     * @param miles : combien de miles parcourus par cette navigation
+     */
     @Override
     public void navigue(double miles) {
         super.navigue(miles);
         System.out.println("Je navigue avec " + this.getNbCivils() + " passagers à bord.");
     }
 
+    /**
+     * Prend la mer en embarquant par défaut 0 passagers.
+     * Redéfini prendLaMer de la classe mère Bateau
+     */
     @Override
     public void prendLaMer() {
         super.prendLaMer();
@@ -40,6 +57,11 @@ public class BateauCivil extends Bateau {
         System.out.println("Je prends la mer avec " + this.getNbCivils() + " passagers à bord.");
     }
 
+    /**
+     * Prend la mer en embarquant des passagers
+     *
+     * @param nbCivilsEmbarques : nombre de passagers embarqués
+     */
     public void prendLaMer(int nbCivilsEmbarques) {
         super.prendLaMer();
         this.setNbCivils(nbCivilsEmbarques); // par defaut

@@ -44,7 +44,8 @@ public class Simulateur {
                 ohMonBateau.setMoteur(monMoteur);
 
                 BateauCivil monBateauCivil = new BateauCivil("Belem", 25);
-                BateauMilitaire Hermione = new BateauMilitaire("Hermione", 150, 23);
+                BateauMilitaire Hermione = new BateauMilitaire("Hermione",
+                                150, 23);
 
                 Controleur leControleurDeBateaux = new Controleur();
                 leControleurDeBateaux.controle(monBateauCivil);

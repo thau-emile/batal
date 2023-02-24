@@ -2,6 +2,7 @@ package simulateur;
 
 import simulateur.bateau.Bateau;
 import simulateur.bateau.BateauCivil;
+import simulateur.bateau.BateauMilitaire;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
 
@@ -49,5 +50,11 @@ public class Simulateur {
                 monBateauCivil.prendLaMer(27);
                 monBateauCivil.navigue(42);
                 monBateauCivil.arriveAuPort();
+
+                BateauMilitaire Hermione = new BateauMilitaire("Hermione",
+                                150, 23);
+                Hermione.prendLaMer();
+                Hermione.navigue(33);
+                Hermione.arriveAuPort();
         }
 }

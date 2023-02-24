@@ -7,9 +7,10 @@ import simulateur.bateau.piece.Moteur;
  * Bateau simule un... bateau.
  */
 public class Bateau {
+
+    private static int nombreDeBateauxConstruits = 0;
     private final String nom;
     private double milesParcourus = 0;
-    private static int nombreDeBateauxConstruits = 0;
     private Coque coque;
     private Moteur moteur;
     // private final int countDown = 42;
@@ -38,6 +39,14 @@ public class Bateau {
         Bateau.nombreDeBateauxConstruits++;
     }
 
+    public static int getNombreDeBateauxConstruits() {
+        return Bateau.nombreDeBateauxConstruits;
+    }
+
+    public static void setNombreDeBateauxConstruits(int nombreDeBateauxConstruits) {
+        Bateau.nombreDeBateauxConstruits = nombreDeBateauxConstruits;
+    }
+
     public String getNom() {
         return this.nom;
     }
@@ -50,14 +59,6 @@ public class Bateau {
         this.milesParcourus = milesParcourus;
     }
 
-    public static int getNombreDeBateauxConstruits() {
-        return Bateau.nombreDeBateauxConstruits;
-    }
-
-    public static void setNombreDeBateauxConstruits(int nombreDeBateauxConstruits) {
-        Bateau.nombreDeBateauxConstruits = nombreDeBateauxConstruits;
-    }
-
     public Coque getCoque() {
         return this.coque;
     }
@@ -66,11 +67,19 @@ public class Bateau {
         this.coque = coque;
     }
 
+    public Moteur getMoteur() {
+        return moteur;
+    }
+
+    public void setMoteur(Moteur moteur) {
+        this.moteur = moteur;
+    }
+
     /**
      * Le navire prends la mer.
      */
     public void prendLaMer() {
-        System.out.println(this.getNom() + " prend la mer.");
+        System.out.println(getNom() + " prend la mer.");
     }
 
     /**
@@ -79,10 +88,8 @@ public class Bateau {
      * @param miles : combien de miles parcourus par cette navigation
      */
     public void navigue(double miles) {
-        this.setMilesParcourus(this.getMilesParcourus() + miles);
-        System.out.printf(this.getNom() +
-                " parcourt %.2f miles.\n",
-                this.getMilesParcourus());
+        setMilesParcourus(getMilesParcourus() + miles);
+        System.out.printf(getNom() + " parcourt %.2f miles.\n", getMilesParcourus());
     }
 
     /**
@@ -90,18 +97,10 @@ public class Bateau {
      * Affiche les miles parcourus depuis le départ, uis les reset.
      */
     public void arriveAuPort() {
-        System.out.printf(this.getNom() +
+        System.out.printf(getNom() +
                 " a parcouru %.2f miles lors de sa sortie en mer.\n",
-                this.getMilesParcourus());
-        this.setMilesParcourus(0);
-    }
-
-    public Moteur getMoteur() {
-        return moteur;
-    }
-
-    public void setMoteur(Moteur moteur) {
-        this.moteur = moteur;
+                getMilesParcourus());
+        setMilesParcourus(0);
     }
 
 }

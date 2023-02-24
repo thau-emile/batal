@@ -8,20 +8,20 @@ public class BateauCivil extends Bateau {
 
     private int nbCivils;
 
-    public int getNbCivils() {
-        return this.nbCivils;
-    }
-
-    public void setNbCivils(int nbCivils) {
-        this.nbCivils = nbCivils;
-    }
-
     public BateauCivil(String nom) {
         super(nom);
     }
 
     public BateauCivil(String nom, int ptDeVieMaxCoque) {
         super(nom, ptDeVieMaxCoque);
+    }
+
+    public int getNbCivils() {
+        return this.nbCivils;
+    }
+
+    public void setNbCivils(int nbCivils) {
+        this.nbCivils = nbCivils;
     }
 
     /**
@@ -31,8 +31,8 @@ public class BateauCivil extends Bateau {
     @Override
     public void arriveAuPort() {
         super.arriveAuPort();
-        System.out.println("Je décharge " + this.getNbCivils() + " passagers.");
-        this.setNbCivils(0);
+        System.out.println("Je décharge " + getNbCivils() + " passagers.");
+        setNbCivils(0);
     }
 
     /**
@@ -43,7 +43,7 @@ public class BateauCivil extends Bateau {
     @Override
     public void navigue(double miles) {
         super.navigue(miles);
-        System.out.println("Je navigue avec " + this.getNbCivils() + " passagers à bord.");
+        System.out.println("Je navigue avec " + getNbCivils() + " passagers à bord.");
     }
 
     /**
@@ -53,8 +53,8 @@ public class BateauCivil extends Bateau {
     @Override
     public void prendLaMer() {
         super.prendLaMer();
-        this.setNbCivils(0); // par defaut
-        System.out.println("Je prends la mer avec " + this.getNbCivils() + " passagers à bord.");
+        setNbCivils(0); // par defaut
+        System.out.println("Je prends la mer avec " + getNbCivils() + " passagers à bord.");
     }
 
     /**
@@ -64,8 +64,8 @@ public class BateauCivil extends Bateau {
      */
     public void prendLaMer(int nbCivilsEmbarques) {
         super.prendLaMer();
-        this.setNbCivils(nbCivilsEmbarques); // par defaut
-        System.out.println("Je prends la mer avec " + this.getNbCivils() + " passagers à bord.");
+        setNbCivils(nbCivilsEmbarques); // par defaut
+        System.out.println("Je prends la mer avec " + getNbCivils() + " passagers à bord.");
     }
 
 }

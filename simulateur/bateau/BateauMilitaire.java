@@ -37,21 +37,21 @@ public class BateauMilitaire extends Bateau {
     public void arriveAuPort() {
         super.arriveAuPort();
         System.out.println("J'arrive au port avec mon canon de force : "
-                + this.getForceCanon());
+                + getForceCanon());
     }
 
     @Override
     public void navigue(double miles) {
         super.navigue(miles);
         System.out.println("Je navigue avec mon canon de force : "
-                + this.getForceCanon());
+                + getForceCanon());
     }
 
     @Override
     public void prendLaMer() {
         super.prendLaMer();
         System.out.println("Je prends la mer avec mon canon de force : "
-                + this.getForceCanon());
+                + getForceCanon());
     }
 
     /**
@@ -62,9 +62,9 @@ public class BateauMilitaire extends Bateau {
      * @param cible : bateau ciblé par l'attaque.
      */
     public void attaque(Bateau cible) {
-        System.out.println(this.getNom() + " attaque " + cible.getNom());
+        System.out.println(getNom() + " attaque " + cible.getNom());
         Coque coqueCible = cible.getCoque();
-        int newPtDeVie = coqueCible.getPtDeVie() - this.getForceCanon();
+        int newPtDeVie = coqueCible.getPtDeVie() - getForceCanon();
         if (newPtDeVie > 0) {
             coqueCible.setPtDeVie(newPtDeVie);
             System.out.println("Il reste " + newPtDeVie + " points de vie à " + cible.getNom() + ".");

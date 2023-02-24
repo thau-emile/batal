@@ -21,6 +21,7 @@ public class Bateau {
      */
     public Bateau(String nom) {
         this.nom = nom;
+        this.coque = new Coque(100); // Coque par défaut
         Bateau.nombreDeBateauxConstruits++;
     }
 

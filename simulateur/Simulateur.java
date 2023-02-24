@@ -50,5 +50,7 @@ public class Simulateur {
                 leControleurDeBateaux.controle(monBateauCivil);
                 leControleurDeBateaux.controle(Hermione);
 
+                Hermione.attaque(monBateauCivil);
+
         }
 }

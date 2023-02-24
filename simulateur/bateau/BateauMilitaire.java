@@ -1,8 +1,10 @@
 package simulateur.bateau;
 
+import simulateur.bateau.piece.Coque;
+
 public class BateauMilitaire extends Bateau {
 
-    private int forceCanon;
+    private int forceCanon; // 0 par défaut
 
     public BateauMilitaire(String nom) {
         super(nom);
@@ -29,25 +31,34 @@ public class BateauMilitaire extends Bateau {
     public void arriveAuPort() {
         super.arriveAuPort();
         System.out.println("J'arrive au port avec mon canon de force : "
-                + this.forceCanon);
+                + this.getForceCanon());
     }
 
     @Override
     public void navigue(double miles) {
         super.navigue(miles);
         System.out.println("Je navigue avec mon canon de force : "
-                + this.forceCanon);
+                + this.getForceCanon());
     }
 
     @Override
     public void prendLaMer() {
         super.prendLaMer();
         System.out.println("Je prends la mer avec mon canon de force : "
-                + this.forceCanon);
+                + this.getForceCanon());
     }
 
     public void attaque(Bateau cible) {
-
+        System.out.println(this.getNom() + " attaque " + cible.getNom());
+        Coque coqueCible = cible.getCoque();
+        int newPtDeVie = coqueCible.getPtDeVie() - this.getForceCanon();
+        if (newPtDeVie > 0) {
+            coqueCible.setPtDeVie(newPtDeVie);
+            System.out.println("Il reste " + newPtDeVie + " points de vie à " + cible.getNom() + ".");
+        } else {
+            coqueCible.setPtDeVie(0);
+            System.out.println(cible.getNom() + "coule.");
+        }
     }
 
 }

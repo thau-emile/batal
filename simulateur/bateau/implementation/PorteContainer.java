@@ -1,18 +1,16 @@
-package simulateur.bateau;
+package simulateur.bateau.implementation;
+
+import simulateur.bateau.BateauCivil;
+import simulateur.bateau.Cargo;
 
 public class PorteContainer extends BateauCivil implements Cargo {
 
     private final int tonnageMax;
     private int tonnageMarchandises = 0;
 
-    public PorteContainer(String nom) {
+    public PorteContainer(String nom, int tonnageMax) {
         super(nom);
-        this.tonnageMax = 100;
-    }
-
-    public PorteContainer(String nom, int ptDeVieMaxCoque) {
-        super(nom, ptDeVieMaxCoque);
-        this.tonnageMax = 100;
+        this.tonnageMax = tonnageMax;
     }
 
     public PorteContainer(String nom, int ptDeVieMaxCoque, int tonnageMax) {
@@ -35,7 +33,7 @@ public class PorteContainer extends BateauCivil implements Cargo {
     public void chargeTonnage(int tonnage) {
         int placeRestante = getTonnageMax() - getTonnageMarchandises();
         if (tonnage > placeRestante) {
-            System.out.println("Je laisse " + (tonnage - placeRestante) + " à quai.");
+            System.out.println("Je laisse " + (tonnage - placeRestante) + " tonnes à quai.");
             tonnage = placeRestante;
         }
         setTonnageMarchandises(tonnage);

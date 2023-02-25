@@ -3,7 +3,8 @@ package simulateur;
 import simulateur.bateau.Bateau;
 import simulateur.bateau.BateauCivil;
 import simulateur.bateau.BateauMilitaire;
-import simulateur.bateau.PorteContainer;
+import simulateur.bateau.implementation.PorteContainer;
+import simulateur.bateau.implementation.Ravitailleur;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
 
@@ -61,5 +62,13 @@ public class Simulateur {
                 leControleurDeBateaux.controle(dePlacard);
                 dePlacard.chargeTonnage(600);
                 dePlacard.dechargeTonnage();
+
+                // test de Ravitailleur
+                Ravitailleur dePierre = new Ravitailleur("Erikrieg", 20, 1, 8000);
+                leControleurDeBateaux.controle(dePierre);
+                dePierre.chargeTonnage(9000);
+                dePierre.dechargeTonnage();
+                dePierre.attaque(dePlacard); // Pew ! Pew !
+
         }
 }

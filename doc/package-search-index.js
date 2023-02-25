@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"simulateur"},{"l":"simulateur.bateau"},{"l":"simulateur.bateau.piece"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"simulateur"},{"l":"simulateur.bateau"},{"l":"simulateur.bateau.implementation"},{"l":"simulateur.bateau.piece"}];updateSearchResults();

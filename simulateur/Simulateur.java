@@ -5,6 +5,7 @@ import simulateur.bateau.BateauCivil;
 import simulateur.bateau.BateauMilitaire;
 import simulateur.bateau.implementation.PorteContainer;
 import simulateur.bateau.implementation.Ravitailleur;
+import simulateur.bateau.implementation.SousMarinAttaque;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
 
@@ -70,5 +71,13 @@ public class Simulateur {
                 dePierre.dechargeTonnage();
                 dePierre.attaque(dePlacard); // Pew ! Pew !
 
+                // test de SousMarinAttaque
+                SousMarinAttaque bob = new SousMarinAttaque("Salade Iceberg", 87, 115);
+                leControleurDeBateaux.controle(bob);
+                bob.plonge(); // qui vit dans un ananas sous la mer ?
+                bob.plonge();
+                bob.faitSurface();
+                bob.faitSurface();
+                bob.attaque(ohMonBateau);
         }
 }

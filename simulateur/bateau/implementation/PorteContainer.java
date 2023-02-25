@@ -41,6 +41,7 @@ public class PorteContainer extends BateauCivil implements Cargo {
      *
      * @param tonnage : Masse de marchandises à embarquer, en tonnes.
      */
+    @Override
     public void chargeTonnage(int tonnage) {
         int placeRestante = getTonnageMax() - getTonnageMarchandises();
         if (tonnage > placeRestante) {
@@ -54,6 +55,7 @@ public class PorteContainer extends BateauCivil implements Cargo {
     /**
      * Décharge toutes les marchandises du PorteContainer.
      */
+    @Override
     public int dechargeTonnage() {
         int tonnage = getTonnageMarchandises();
         setTonnageMarchandises(0);

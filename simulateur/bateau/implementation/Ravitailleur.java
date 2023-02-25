@@ -47,6 +47,7 @@ public class Ravitailleur extends BateauMilitaire implements Cargo {
      *
      * @param tonnage : Masse de pétrole à embarquer, en tonnes.
      */
+    @Override
     public void chargeTonnage(int tonnage) {
         int placeRestante = getTonnageMax() - getTonnagePetrole();
         if (tonnage > placeRestante) {
@@ -60,6 +61,7 @@ public class Ravitailleur extends BateauMilitaire implements Cargo {
     /**
      * Décharge tout le pétrole du Ravitailleur.
      */
+    @Override
     public int dechargeTonnage() {
         int tonnage = getTonnagePetrole();
         setTonnagePetrole(0);

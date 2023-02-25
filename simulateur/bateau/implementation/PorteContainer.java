@@ -3,6 +3,11 @@ package simulateur.bateau.implementation;
 import simulateur.bateau.BateauCivil;
 import simulateur.bateau.Cargo;
 
+/**
+ * PorteContainer est une classe fille de BateauCivil et implémente Cargo
+ * Il peut embarquer/décharger des passagers/des marchandises.
+ * Obligation de lui fournir un tonnageMax dans le constructeur.
+ */
 public class PorteContainer extends BateauCivil implements Cargo {
 
     private final int tonnageMax;
@@ -30,6 +35,12 @@ public class PorteContainer extends BateauCivil implements Cargo {
         this.tonnageMarchandises = tonnageMarchandises;
     }
 
+    /**
+     * Fait charger des marchandises au PorteContainer.
+     * Le PorteContainer laissera à quai les marchandises dépassant ses capacités.
+     *
+     * @param tonnage : Masse de marchandises à embarquer, en tonnes.
+     */
     public void chargeTonnage(int tonnage) {
         int placeRestante = getTonnageMax() - getTonnageMarchandises();
         if (tonnage > placeRestante) {
@@ -40,6 +51,9 @@ public class PorteContainer extends BateauCivil implements Cargo {
         System.out.println(getNom() + " a chargé " + tonnage + " tonnes de marchandises.");
     }
 
+    /**
+     * Décharge toutes les marchandises du PorteContainer.
+     */
     public int dechargeTonnage() {
         int tonnage = getTonnageMarchandises();
         setTonnageMarchandises(0);

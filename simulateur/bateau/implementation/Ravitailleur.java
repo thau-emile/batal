@@ -3,6 +3,12 @@ package simulateur.bateau.implementation;
 import simulateur.bateau.BateauMilitaire;
 import simulateur.bateau.Cargo;
 
+/**
+ * Ravitailleur est une classe fille de BateauMilitaire et implémente Cargo.
+ * Il a un canon (force par défaut : 0)
+ * Il peut embarquer/décharger du pétrole.
+ * Obligation de lui fournir un tonnageMax dans le constructeur.
+ */
 public class Ravitailleur extends BateauMilitaire implements Cargo {
 
     private final int tonnageMax;
@@ -35,6 +41,12 @@ public class Ravitailleur extends BateauMilitaire implements Cargo {
         this.tonnagePetrole = tonnagePetrole;
     }
 
+    /**
+     * Fait charger du pétrole au Ravitailleur.
+     * Le Ravitailleur laissera sur place le pétrole dépassant ses capacités.
+     *
+     * @param tonnage : Masse de pétrole à embarquer, en tonnes.
+     */
     public void chargeTonnage(int tonnage) {
         int placeRestante = getTonnageMax() - getTonnagePetrole();
         if (tonnage > placeRestante) {
@@ -45,6 +57,9 @@ public class Ravitailleur extends BateauMilitaire implements Cargo {
         System.out.println(getNom() + " a chargé " + tonnage + " tonnes de pétrole.");
     }
 
+    /**
+     * Décharge tout le pétrole du Ravitailleur.
+     */
     public int dechargeTonnage() {
         int tonnage = getTonnagePetrole();
         setTonnagePetrole(0);

@@ -6,6 +6,7 @@ import simulateur.bateau.BateauMilitaire;
 import simulateur.bateau.implementation.PorteContainer;
 import simulateur.bateau.implementation.Ravitailleur;
 import simulateur.bateau.implementation.SousMarinAttaque;
+import simulateur.bateau.implementation.SousMarinRavitailleur;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
 
@@ -79,5 +80,16 @@ public class Simulateur {
                 bob.faitSurface();
                 bob.faitSurface();
                 bob.attaque(ohMonBateau);
+
+                // test de SousMarinRavitailleur
+                SousMarinRavitailleur aquabarman = new SousMarinRavitailleur("Blue Edith", 25, 15, 547);
+                leControleurDeBateaux.controle(aquabarman);
+                aquabarman.plonge();
+                aquabarman.plonge();
+                aquabarman.faitSurface();
+                aquabarman.faitSurface();
+                aquabarman.chargeTonnage(600);
+                aquabarman.dechargeTonnage();
+
         }
 }

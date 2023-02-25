@@ -3,6 +3,12 @@ package simulateur.bateau.implementation;
 import simulateur.bateau.BateauMilitaire;
 import simulateur.bateau.Submersible;;
 
+/**
+ * SousMarinAttaque est une classe fille de BateauMilitaire et implémente
+ * Submersible
+ * Il a un canon (force par défaut : 0)
+ * Il peut plonger/faire surface.
+ */
 public class SousMarinAttaque extends BateauMilitaire implements Submersible {
 
     private boolean sousLEau = false;
@@ -27,6 +33,9 @@ public class SousMarinAttaque extends BateauMilitaire implements Submersible {
         this.sousLEau = estSousLEau;
     }
 
+    /**
+     * Fait remonter à la surface le SousMarinAttaque.
+     */
     @Override
     public void faitSurface() {
         if (isSousLEau()) {
@@ -37,6 +46,9 @@ public class SousMarinAttaque extends BateauMilitaire implements Submersible {
         }
     }
 
+    /**
+     * Fait plonger sous l'eau le SousMarinAttaque.
+     */
     @Override
     public void plonge() {
         if (!isSousLEau()) {

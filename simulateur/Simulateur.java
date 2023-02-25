@@ -3,6 +3,7 @@ package simulateur;
 import simulateur.bateau.Bateau;
 import simulateur.bateau.BateauCivil;
 import simulateur.bateau.BateauMilitaire;
+import simulateur.bateau.PorteContainer;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
 
@@ -40,9 +41,11 @@ public class Simulateur {
                 System.out.println(Bateau.getNombreDeBateauxConstruits()
                                 + " bateaux ont été construits");
 
+                // test ajout d'un Moteur (non utilisé par ailleurs)
                 Moteur monMoteur = new Moteur(200, 8);
                 ohMonBateau.setMoteur(monMoteur);
 
+                // test de BateauCivil et BateauMilitaire
                 BateauCivil monBateauCivil = new BateauCivil("Belem", 25);
                 BateauMilitaire hermione = new BateauMilitaire("Hermione",
                                 150, 23);
@@ -53,5 +56,10 @@ public class Simulateur {
 
                 hermione.attaque(monBateauCivil);
 
+                // test de PorteContainer
+                PorteContainer dePlacard = new PorteContainer("Vous l'avez ?", 50, 500);
+                leControleurDeBateaux.controle(dePlacard);
+                dePlacard.chargeTonnage(600);
+                dePlacard.dechargeTonnage();
         }
 }

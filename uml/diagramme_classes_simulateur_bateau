@@ -1,0 +1,70 @@
+@startuml
+
+Class Simulateur{
++ {static} main(String[] args) : void
+}
+
+Class Controleur{
++ controle(Bateau bateau) : void
+}
+
+Class Bateau{
+- {static} int nombreDeBateauxConstruits
+- final String nom
+- double milesParcourus
+- Coque coque
+- Moteur moteur
+
++ Bateau(String nom)
++ Bateau(String nom, int ptDeVieMaxCoque)
++ prendLaMer() : void
++ navigue(double miles) : void
++ arriveAuPort() : void
+}
+
+Class BateauCivil{
+}
+
+Class BateauMilitaire{
+}
+
+interface Cargo{
+}
+
+interface Submersible{
+}
+
+Class PorteContainer{
+}
+
+Class Ravitailleur{
+}
+
+Class SousMarinAttaque{
+}
+
+Class SousMarinRavitailleur{
+}
+
+Simulateur --> Bateau
+
+Controleur --> Bateau
+
+Bateau <|-- BateauCivil
+
+Bateau <|-- BateauMilitaire
+
+BateauCivil <|-- PorteContainer
+Cargo <|.. PorteContainer
+
+BateauMilitaire <|-- Ravitailleur
+Cargo <|.. Ravitailleur
+
+BateauMilitaire <|-- SousMarinAttaque
+Submersible <|.. SousMarinAttaque
+
+BateauMilitaire <|-- SousMarinRavitailleur
+Cargo <|.. SousMarinRavitailleur
+Submersible <|.. SousMarinRavitailleur
+
+@enduml

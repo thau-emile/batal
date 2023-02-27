@@ -9,6 +9,7 @@ import simulateur.bateau.implementation.SousMarinAttaque;
 import simulateur.bateau.implementation.SousMarinRavitailleur;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
+import simulateur.parkings.ParkingACargo;
 
 public class Simulateur {
         public static void main(String[] args) {
@@ -90,6 +91,10 @@ public class Simulateur {
                 aquabarman.faitSurface();
                 aquabarman.chargeTonnage(600);
                 aquabarman.dechargeTonnage();
+
+                // test du polymorphisme sur Cargo via le parkingACargo
+                ParkingACargo leHavre = new ParkingACargo("Port Moche", 5);
+                leHavre.garerCargo(dePlacard);
 
         }
 }

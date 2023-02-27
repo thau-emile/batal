@@ -12,8 +12,6 @@ Class Bateau{
 - {static} int nombreDeBateauxConstruits
 - final String nom
 - double milesParcourus
-- Coque coque
-- Moteur moteur
 
 + Bateau(String nom)
 + Bateau(String nom, int ptDeVieMaxCoque)
@@ -23,15 +21,29 @@ Class Bateau{
 }
 
 Class BateauCivil{
+- int nbCivils;
+
++ BateauCivil(String nom)
++ BateauCivil(String nom, int ptDeVieMaxCoque)
++ getNbCivils() : int
++ setNbCivils(int nbCivils) : void
++ arriveAuPort() : void
++ navigue(double miles) : void
++ prendLaMer() : void
++ prendLaMer(int nbCivilsEmbarques) : void
 }
 
 Class BateauMilitaire{
 }
 
 interface Cargo{
++ {abstract} chargeTonnage(int tonnage) : void
++ {abstract} dechargeTonnage() : int
 }
 
 interface Submersible{
++ {abstract} plonge() : void
++ {abstract} faitSurface() : void
 }
 
 Class PorteContainer{
@@ -46,9 +58,18 @@ Class SousMarinAttaque{
 Class SousMarinRavitailleur{
 }
 
+Class Coque{
+}
+
+Class Moteur{
+}
+
 Simulateur --> Bateau
 
 Controleur --> Bateau
+
+Bateau *--> "1,1" Coque
+Bateau *--> "1,1" Moteur : WIP
 
 Bateau <|-- BateauCivil
 

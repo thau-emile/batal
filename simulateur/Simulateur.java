@@ -92,9 +92,11 @@ public class Simulateur {
                 aquabarman.chargeTonnage(600);
                 aquabarman.dechargeTonnage();
 
-                // test du polymorphisme sur Cargo via le parkingACargo
-                ParkingACargo leHavre = new ParkingACargo("Port Moche", 5);
+                // test du polymorphisme sur Cargo via le ParkingACargo
+                ParkingACargo leHavre = new ParkingACargo("Port Moche", 1);
                 leHavre.garerCargo(dePlacard);
+                leHavre.garerCargo(aquabarman);
+                leHavre.departCargo(dePlacard, 700);
 
         }
 }

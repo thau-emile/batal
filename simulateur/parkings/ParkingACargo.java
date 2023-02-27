@@ -38,10 +38,21 @@ public class ParkingACargo {
         if (getNbPlacesMax() > cargoGares.size()) {
             cargoGares.add(cargo);
             System.out.println("Bienvenue à " + getNom());
+            cargo.dechargeTonnage();
             return true;
         } else {
             System.out.println("J'ai pas la place pour ta poubelle flottante.");
             return false;
+        }
+    }
+
+    public void departCargo(Cargo cargo, int tonnageACharger) {
+        if (getCargoGares().contains(cargo)) {
+            getCargoGares().remove(cargo);
+            cargo.chargeTonnage(tonnageACharger);
+            System.out.println("Ciao ! J'espère que vous avez apprécié votre séjour à " + getNom() + ".");
+        } else {
+            System.out.println("Jamais vu ton tas de ferraille !");
         }
     }
 

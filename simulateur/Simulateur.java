@@ -109,5 +109,7 @@ public class Simulateur {
 
                 laRochelle.displaySortBateauGares();
 
+                System.out.println(ohMonBateau.getEtatBateau());
+
         }
 }

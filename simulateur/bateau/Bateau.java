@@ -14,6 +14,7 @@ public class Bateau implements Comparable<Bateau> {
     private double milesParcourus = 0;
     private Coque coque;
     private Moteur moteur;
+    private EtatBateau etatBateau = EtatBateau.OPERATIONNEL;
     // private final int countDown = 42;
 
     /**
@@ -74,6 +75,14 @@ public class Bateau implements Comparable<Bateau> {
 
     public void setMoteur(Moteur moteur) {
         this.moteur = moteur;
+    }
+
+    public EtatBateau getEtatBateau() {
+        return etatBateau;
+    }
+
+    public void setEtatBateau(EtatBateau etatBateau) {
+        this.etatBateau = etatBateau;
     }
 
     /**

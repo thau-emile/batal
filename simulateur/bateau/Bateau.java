@@ -2,11 +2,12 @@ package simulateur.bateau;
 
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
+import java.lang.Comparable;
 
 /**
  * Bateau simule un... bateau.
  */
-public class Bateau {
+public class Bateau implements Comparable<Bateau> {
 
     private static int nombreDeBateauxConstruits = 0;
     private final String nom;
@@ -101,6 +102,11 @@ public class Bateau {
                 " a parcouru %.2f miles lors de sa sortie en mer.\n",
                 getMilesParcourus());
         setMilesParcourus(0);
+    }
+
+    @Override
+    public int compareTo(Bateau autreBateau) {
+        return this.nom.compareTo(autreBateau.nom);
     }
 
 }

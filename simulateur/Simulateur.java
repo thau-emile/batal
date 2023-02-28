@@ -9,6 +9,7 @@ import simulateur.bateau.implementation.SousMarinAttaque;
 import simulateur.bateau.implementation.SousMarinRavitailleur;
 import simulateur.bateau.piece.Coque;
 import simulateur.bateau.piece.Moteur;
+import simulateur.parkings.ParkingABateau;
 import simulateur.parkings.ParkingACargo;
 
 public class Simulateur {
@@ -97,6 +98,16 @@ public class Simulateur {
                 leHavre.garerCargo(dePlacard);
                 leHavre.garerCargo(aquabarman);
                 leHavre.departCargo(dePlacard, 700);
+
+                // test de sort
+                ParkingABateau laRochelle = new ParkingABateau("Port des Minimes", 25);
+                laRochelle.garerBateau(ohMonBateau);
+                laRochelle.garerBateau(bateau2);
+                laRochelle.garerBateau(bateau3);
+                laRochelle.garerBateau(dePierre);
+                laRochelle.garerBateau(bob);
+
+                laRochelle.displaySortBateauGares();
 
         }
 }
